@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"gopro\pkg\kubernetes\client"
+	"github.com/niswat/gopro/pkg/kubernetes/client"
 	"k8s.io/client-go/kubernetes"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

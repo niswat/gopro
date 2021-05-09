@@ -1,4 +1,4 @@
-module gopro
+module github.com/niswat/gopro
 
 go 1.15
 
