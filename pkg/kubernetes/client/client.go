@@ -70,6 +70,6 @@ func NewK8sOutClusterClient() (*kubernetes.Clientset, error) {
 		return nil, err
 	}
 
-	return clientset
+	return clientset, nil
 
 }

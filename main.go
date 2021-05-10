@@ -2,8 +2,9 @@ package main
 
 import (
 	"context"
+	"fmt"
+
 	"github.com/niswat/gopro/pkg/kubernetes/client"
-	"k8s.io/client-go/kubernetes"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -33,14 +34,14 @@ import (
 func main() {
 	clientset, err := client.NewK8sOutClusterClient()
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
 	nodeList, err := clientset.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		panic(err)
 	}
-	for _, node := nodeList.Items {
+	for _, node := range nodeList.Items {
 		fmt.Println(node.Name)
 	}
 
